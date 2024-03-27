@@ -83,12 +83,16 @@ input, select, textarea {
 	}
 
 	tags {
-            display: inline-block;
-            background-color: #f0f0f0;
-            color: #333;
-            border-radius: 3px;
-            padding: 5px 10px;
-            margin-right: 5px;
+		margin-top: 10px;
+	}
+
+	tag {
+		display: inline-block;
+		background-color: #f0f0f0;
+		color: #333;
+		border-radius: 3px;
+		padding: 5px 10px;
+		margin-right: 5px;
 	}
 
 	@media screen and (max-width: 480px) {
