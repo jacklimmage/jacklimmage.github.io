@@ -3,9 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello world</title>
+    <title>Jack Limmage</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    Hello world
+    <button id="theme-toggle" type="button" title="Click me!">
+      Night mode
+    </button>
+    <h1>My Site</h1>
+    <div id="boxes"></div>
+
+    <script>
+      const boxItems = [
+        { 
+          label: "1", 
+          href: "/1/",
+          description: "One."
+        },
+        { 
+          label: "2", 
+          href: "/2/",
+          description: "Two."
+        },
+      ];
+
+      const container = document.getElementById("boxes");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark");
+        themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
+      });
+
+      boxItems.forEach((item) => {
+        const link = document.createElement("a");
+        link.className = "box";
+        link.textContent = item.label;
+        link.href = item.href;
+        link.title = "Click me!";
+        if (item.href.startsWith("http")) {
+          link.target = "_blank";
+          link.rel = "noreferrer noopener";
+        }
+        container.appendChild(link);
+      });
+    </script>
   </body>
 </html>
